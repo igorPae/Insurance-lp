@@ -1,0 +1,695 @@
+
+<?php
+
+$name = $_POST['name'];
+$to ="admin@fed-dev.net";
+$subject = "TEST MESSAGE";
+$message = "TEST TEXT LONG";
+$headers = "MIME-VERSION: 1.0" . "\r\n";
+$headers = "Content-type:text/html;charset=UTF-8" . "\r\n";
+$headers = "From : <$form> \r\n";
+
+?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="mdb.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+		<link rel="stylesheet" href="https://cdn.rawgit.com/kybarg/mdl-selectfield/mdl-menu-implementation/mdl-selectfield.min.css">
+		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+	</head>
+	<style>
+	@import url(https://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
+@import url(https://fonts.googleapis.com/earlyaccess/opensanshebrewcondensed.css);
+ img.bg {
+        /* Устанавливаем правила для заполнения фоном */
+        min-height: 100%;
+        min-width: 1024px;
+
+        /* Устанавливаем коэффициент пропорциональности */
+        width: 100%;
+        height: auto;
+
+        /* Устанавливаем позиционирование */
+        position: fixed;
+        top: 0;
+        left: 0;
+}
+
+@media screen and (max-width: 1024px) { /* Определяется свое для каждого конкретного изображения */
+        img.bg {
+                left: 50%;
+                margin-left: -512px;   /* 50% */
+        }
+}
+
+	body {
+        direction: rtl;
+		font-size: 1.4em;
+		-webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+		background-repeat: no-repeat center center fixed
+		background-color: 
+		background-image:   ;
+		width: 100%;
+		height: 100%;
+		color:rgb(240, 173, 78);
+		font-family: "Open Sans Hebrew";
+		
+	}
+
+	h1{
+		    text-shadow: 1px 1px 2px #333 !important;
+    color: #fff;
+	}
+	h2{
+		    text-shadow: 1px 1px 2px #333 !important;
+    color: #fff;
+	}
+	.container-fluid {
+		max-width: 1100px;
+	}
+	#container {
+		height: 500px;
+		margin-top: 5%;
+	    min-height: 50px;
+	    display: flex;
+    	align-items: center;
+	    border-radius: 20px;
+	    border: 3px solid #2d536b;
+	    background-color: rgba(0,0,0,.6);
+	    color:#fff;
+	    font-family: 'Open Sans', sans-serif;
+	    vertical-align: middle;
+	    position: relative;
+
+	}
+	
+	span {
+		width: 100%;
+	}
+	form {
+		width: 100%;
+	}
+	#textrashi {
+		height: 80vh;
+		min-height: 500px;
+		margin-top: 5%;
+		border-radius: 20px;
+	}
+	#chek1 {
+		margin-bottom: 5%;
+	}
+	#chek2 {
+		margin-bottom: 5%;
+	}
+	#chek3{
+		margin-bottom: 7%;
+	}
+	#textbo {
+		margin-bottom: 5%;
+	}
+	#input-buton {
+		float: none;
+		margin: 0 auto;
+	}
+	#input-buton .ammount {
+		padding: 0;
+	}
+	
+	#floatingCirclesG{
+
+	position:relative;
+	width:125px;
+	height:125px;
+	margin:auto;
+	transform:scale(0.6);
+		-o-transform:scale(0.6);
+		-ms-transform:scale(0.6);
+		-webkit-transform:scale(0.6);
+		-moz-transform:scale(0.6);
+	margin-top: 22%;
+	}
+	.f_circleG{
+	position:absolute;
+	background-color:rgb(255,255,255);
+	height:22px;
+	width:22px;
+	border-radius:12px;
+		-o-border-radius:12px;
+		-ms-border-radius:12px;
+		-webkit-border-radius:12px;
+		-moz-border-radius:12px;
+	animation-name:f_fadeG;
+		-o-animation-name:f_fadeG;
+		-ms-animation-name:f_fadeG;
+		-webkit-animation-name:f_fadeG;
+		-moz-animation-name:f_fadeG;
+	animation-duration:1.2s;
+		-o-animation-duration:1.2s;
+		-ms-animation-duration:1.2s;
+		-webkit-animation-duration:1.2s;
+		-moz-animation-duration:1.2s;
+	animation-iteration-count:infinite;
+		-o-animation-iteration-count:infinite;
+		-ms-animation-iteration-count:infinite;
+		-webkit-animation-iteration-count:infinite;
+		-moz-animation-iteration-count:infinite;
+	animation-direction:normal;
+		-o-animation-direction:normal;
+		-ms-animation-direction:normal;
+		-webkit-animation-direction:normal;
+		-moz-animation-direction:normal;
+	}
+	#frotateG_01{
+	left:0;
+	top:51px;
+	animation-delay:0.45s;
+		-o-animation-delay:0.45s;
+		-ms-animation-delay:0.45s;
+		-webkit-animation-delay:0.45s;
+		-moz-animation-delay:0.45s;
+	}
+	#frotateG_02{
+	left:15px;
+	top:15px;
+	animation-delay:0.6s;
+		-o-animation-delay:0.6s;
+		-ms-animation-delay:0.6s;
+		-webkit-animation-delay:0.6s;
+		-moz-animation-delay:0.6s;
+	}
+	#frotateG_03{
+	left:51px;
+	top:0;
+	animation-delay:0.75s;
+		-o-animation-delay:0.75s;
+		-ms-animation-delay:0.75s;
+		-webkit-animation-delay:0.75s;
+		-moz-animation-delay:0.75s;
+	}
+	#frotateG_04{
+	right:15px;
+	top:15px;
+	animation-delay:0.9s;
+		-o-animation-delay:0.9s;
+		-ms-animation-delay:0.9s;
+		-webkit-animation-delay:0.9s;
+		-moz-animation-delay:0.9s;
+	}
+	#frotateG_05{
+	right:0;
+	top:51px;
+	animation-delay:1.05s;
+		-o-animation-delay:1.05s;
+		-ms-animation-delay:1.05s;
+		-webkit-animation-delay:1.05s;
+		-moz-animation-delay:1.05s;
+	}
+	#frotateG_06{
+	right:15px;
+	bottom:15px;
+	animation-delay:1.2s;
+		-o-animation-delay:1.2s;
+		-ms-animation-delay:1.2s;
+		-webkit-animation-delay:1.2s;
+		-moz-animation-delay:1.2s;
+	}
+	#frotateG_07{
+	left:51px;
+	bottom:0;
+	animation-delay:1.35s;
+		-o-animation-delay:1.35s;
+		-ms-animation-delay:1.35s;
+		-webkit-animation-delay:1.35s;
+		-moz-animation-delay:1.35s;
+	}
+	#frotateG_08{
+	left:15px;
+	bottom:15px;
+	animation-delay:1.5s;
+		-o-animation-delay:1.5s;
+		-ms-animation-delay:1.5s;
+		-webkit-animation-delay:1.5s;
+		-moz-animation-delay:1.5s;
+	}
+	@keyframes f_fadeG{
+	0%{
+		background-color:rgba(0,0,0,0.88);
+	}
+	100%{
+		background-color:rgb(255,255,255);
+	}
+	}
+	@-o-keyframes f_fadeG{
+	0%{
+		background-color:rgba(0,0,0,0.88);
+	}
+	100%{
+		background-color:rgb(255,255,255);
+	}
+	}
+	@-ms-keyframes f_fadeG{
+	0%{
+		background-color:rgba(0,0,0,0.88);
+	}
+	100%{
+		background-color:rgb(255,255,255);
+	}
+	}
+	@-webkit-keyframes f_fadeG{
+	0%{
+		background-color:rgba(0,0,0,0.88);
+	}
+	100%{
+		background-color:rgb(255,255,255);
+	}
+	}
+	@-moz-keyframes f_fadeG{
+	0%{
+		background-color:rgba(0,0,0,0.88);
+	}
+	100%{
+		background-color:rgb(255,255,255);
+	}
+	}
+	@media (max-width: 600px) {
+	#textrashi {
+		height: 100px;
+		min-height: 20vh;
+	}
+	}
+	#send {
+		width: 80%;
+		float: none;
+		margin: 0 auto;
+	}
+	#send .form-group .mdl-menu__container {
+		/* max-height: 150px;
+    	 overflow-y: scroll;*/
+	}
+
+	#name {
+	margin :5px;
+	border-radius: 0;
+	box-shadow: 
+	}
+
+	#phone {
+		margin :5px;
+		border-radius: 0;
+		width: 68%;
+	}
+   .mdl-checkbox__label {
+    color: orange;
+}
+	#second-wrapper {
+		position: absolute;
+	    z-index: 999;
+	    background-color: rgba(0,0,0, .5);
+	    top: 0;
+	    width: 100%;
+	    left: 0;
+	    height: 100%;
+	    border-radius: 18px;
+	}
+	#third-wrapper {
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		display:block
+	}
+	#buton {
+	    color: #fff;
+	    background-color: rgb(240, 173, 78);
+	    border-color: #eea236;
+	    border-radius: 0;
+	    margin-top: 25px;
+	    font-weight: bold;
+ 	  }
+ 
+    #sendinfo { 
+    color: #fff;
+    background-color: rgb(240, 173, 78);
+    border-color: #eea236;
+    border-radius: 14px;
+	}
+	.mdl-checkbox.is-upgraded {
+		padding-right: 24px;
+	}
+	.mdl-checkbox__tick-outline {
+		right: 0;
+	}
+	.mdl-checkbox__box-outline {
+		right: 0;
+		border-radius: 0;
+	}
+	.mdl-checkbox.is-checked .mdl-checkbox__tick-outline {
+		background: rgb(240, 173, 78)url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiI…lsZT0iZmlsbDojZmZmZmZmO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lIiAvPgo8L3N2Zz4K);
+	}
+	.mdl-checkbox.is-checked .mdl-checkbox__box-outline {
+		border: 2px solid rgb(240, 173, 78);
+	}
+	.mdl-checkbox.is-checked .mdl-checkbox__box-outline {
+    border: 0px solid rgb(240, 173, 78);
+}
+#basic-addon1 {
+	border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: #fff;
+    border-width: 0px;
+    border-bottom: 1px solid #9e9e9e;
+}
+#textbox { 
+	    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: #fff;
+		
+}
+.mdl-selectfield {
+	float: left;
+	width: 28.6%;
+}
+.mdl-textfield__label {
+    text-align: right;
+}
+#sample1 {
+	text-align: right;
+}
+.mdl-textfield__label {
+    color: rgba(240, 173, 78,.5);
+    top: 32px;
+}
+input[type=date]:focus:not([readonly])+label, input[type=datetime-local]:focus:not([readonly])+label, input[type=email]:focus:not([readonly])+label, input[type=number]:focus:not([readonly])+label, input[type=password]:focus:not([readonly])+label, input[type=search-md]:focus:not([readonly])+label, input[type=tel]:focus:not([readonly])+label, input[type=text]:focus:not([readonly])+label, input[type=time]:focus:not([readonly])+label, input[type=url]:focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label {
+    color: rgb(240, 173, 78);
+}
+input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=search-md]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=url]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+        border-bottom: 1px solid rgb(240, 173, 78);
+    box-shadow: 0 1px 0 0 rgb(240, 173, 78);
+}
+.phone-input {
+	margin-top: -14px;
+    max-width: 67%;
+}
+.mdl-selectfield__select {
+    border-bottom: 1px solid #9e9e9e;
+}
+.mdl-selectfield__placeholder {
+    color: rgba(240, 173, 78, .5);
+}
+.mdl-selectfield__label {
+    color: rgba(240, 173, 78, .5);
+}
+.is-dirty .material-icons {
+	display: none;
+}
+#send .form-group {
+	margin-top: -32px;
+}
+#sendinfo {
+    border-radius: 0;
+}
+#first-wrapper form {
+	position: relative;
+}
+.alert-checkboxes {
+	position: absolute;
+    bottom: 91px;
+    color: red;
+    font-weight: bold;
+}
+.alert-ammount {
+	color: red;
+    font-weight: bold;
+    position: absolute;
+}
+.copyrights {
+	color: #fff;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 24px;
+    margin: 0 auto;
+}
+.copyrights p {
+	width: 33%;
+    text-align: center;
+    margin: 0 auto;
+}
+.info-msg {
+	margin-bottom: 64px;
+    font-size: 32px;
+    line-height: 1;
+}
+@media screen and (max-width: 768px){
+	.container-fluid > .row {
+		 display: flex;
+   		 flex-direction: column;
+	}
+	.container-fluid > .row #container {
+		order: 2;
+	}
+	#textrashi {
+	    height: 79vh;
+	    min-height: 439px;
+	    margin-top: 5%;
+	    border-radius: 20px;
+	}
+	#textrashi h1, #textrashi h2 {
+	color: orange;
+}
+.copyrights {
+	display: none;
+}
+}
+	</style>
+	<body ><img src="rendered.jpg" class="bg">
+		<div class="container-fluid">
+			<div class="row">
+				
+				<div class="col-sm-4" id="container">
+					<div id="first-wrapper">
+						<div class="info-msg">אנא מלא את הפרטים על מנת לקצץ בהוצאות הביטוח</div>
+						<form>
+							<div class="row" id="chek1">
+								<div class="col-xs-6 col-lg-6" >
+									<label class = "mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect"
+										for = "checkbox1"><span class = "mdl-checkbox__label">בריאות</span>
+										<input type="checkbox" name="a" id="checkbox1" class = "mdl-checkbox__input"  >
+										
+									</label>
+								</div>
+								<div class="col-xs-6 col-lg-6">
+									<label class = "mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect"
+										for = "checkbox2"><input type="checkbox"  id="checkbox2" name="a" value=" " class = "mdl-checkbox__input" ><span class = "mdl-checkbox__label">סיעוד</span>
+									</label>
+								</div>
+							</div>
+							
+							<div class="row" id="chek2">
+								<div class="col-xs-6 col-lg-6">
+									
+									<label class = "mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect"
+										for = "checkbox3"> <input type="checkbox" id="checkbox3" name="a" value=" " class = "mdl-checkbox__input"  ><span class = "mdl-checkbox__label">תאונות</span>
+									</label>
+								</div>
+								<div class="col-xs-6 col-lg-6">
+									<label class = "mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect"
+										for = "checkbox4"><input type="checkbox"  id="checkbox4" name="a" value=" " class = "mdl-checkbox__input"><span class = "mdl-checkbox__label">חיים</span>
+									</label>
+								</div>
+							</div>
+							<div class="row" id="chek3">
+								<div class="col-xs-12">
+									<label class = "mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect"
+										for = "checkbox5"><input type="checkbox" id="checkbox5" name="a" value=" " class = "mdl-checkbox__input" > <span class = "mdl-checkbox__label">משכנתא</span>
+										
+									</label>
+								</div>
+								
+							</div>
+							<p class="alert-checkboxes">אנא סמן לפחות ביטוח אחד</p>
+							<div class="row" id="input-buton">
+								<div class="col-xs-12 ammount">
+									<div class="input-group">
+										<span class="input-group-addon" id="basic-addon1">₪</span>
+										<input type="text" class="form-control col-xs-6 col-lg-6" id="textbox" aria-describedby="basic-addon1" placeholder="סכום עבור כל הביטוחים שנבחרו" value="">
+									</div>
+									<p class="alert-ammount">אנא הזן סכום</p>
+									<button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="total()" id="buton"  value="chashev">בדוק</button>
+								</div>
+							</div>
+						</form>
+						</div>
+						<div id="second-wrapper" style="display: none;">
+							<div id="floatingCirclesG">
+								<div class="f_circleG" id="frotateG_01"></div>
+								<div class="f_circleG" id="frotateG_02"></div>
+								<div class="f_circleG" id="frotateG_03"></div>
+								<div class="f_circleG" id="frotateG_04"></div>
+								<div class="f_circleG" id="frotateG_05"></div>
+								<div class="f_circleG" id="frotateG_06"></div>
+								<div class="f_circleG" id="frotateG_07"></div>
+								<div class="f_circleG" id="frotateG_08"></div>
+						</div>
+						</div>
+						<div id="third-wrapper" class="row" style="display: none;">
+							<div id="gauge"  class="200x160px" style="width:100%; height:60%;"></div>
+							<div id="send" class="col-xs-6 col-lg-6 input-group" >
+								<form action="" method="post">
+								<div class="form-group">
+									<div class="mdl-textfield mdl-js-textfield">
+									    <input class="mdl-textfield__input" type="text" id="sample1" name="name">
+									    <label class="mdl-textfield__label" for="sample1">שם...</label>
+									 </div>
+								</div>
+								<div class="form-group">
+									          <div class="mdl-selectfield mdl-js-selectfield">
+        				<select class="mdl-selectfield__select" id="professsion1" name="טלפון" placeholder="קידומת" >
+        										<option value=""></option>
+									            <option class="mdl-menu__item" data-val="02">02</option>
+									            <option class="mdl-menu__item" data-val="03">03</option>
+									            <option class="mdl-menu__item" data-val="04">04</option>
+									            <option class="mdl-menu__item" data-val="08">08</option>
+									            <option class="mdl-menu__item" data-val="09">09</option>
+									            <option class="mdl-menu__item" data-val="050">050</option>
+									            <option class="mdl-menu__item" data-val="051">051</option>
+									            <option class="mdl-menu__item" data-val="052">052</option>
+									            <option class="mdl-menu__item" data-val="053">053</option>
+									            <option class="mdl-menu__item" data-val="054">054</option>
+									            <option class="mdl-menu__item" data-val="055">055</option>
+									            <option class="mdl-menu__item" data-val="056">056</option>
+									            <option class="mdl-menu__item" data-val="058">058</option>
+									            <option class="mdl-menu__item" data-val="059">059</option>
+									            <option class="mdl-menu__item" data-val="071">071</option>
+									            <option class="mdl-menu__item" data-val="072">072</option>
+									            <option class="mdl-menu__item" data-val="073">073</option>
+									            <option class="mdl-menu__item" data-val="074">074</option>
+									            <option class="mdl-menu__item" data-val="076">076</option>
+									            <option class="mdl-menu__item" data-val="077">077</option>
+									            <option class="mdl-menu__item" data-val="078">078</option>
+									            <option class="mdl-menu__item" data-val="079">079</option>
+									        </select>
+									        <label class="mdl-selectfield__label" for="professsion1">קידומת</label>
+									    </div>
+									<div class="mdl-textfield mdl-js-textfield phone-input">
+									    <input class="mdl-textfield__input" type="text" id="sample1">
+									    <label class="mdl-textfield__label" for="sample1">טלפון</label>
+									 </div>
+								</div>
+								<button type="submit" name='submit' class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="sendinfo"  value="Send">שלח</button>
+								<?php
+								if (isset ($_POST['submit'])) {
+
+										if(mail($to,$subject, $message, $headers)) {
+										echo 'Thanks';
+									} else {
+									echo 'Not SENT';
+								}
+
+									}
+								?>
+							</form>
+							</div>
+						</div>
+					
+				</div>
+			<div class="col-sm-7" id="textrashi">
+					<h1>בדיקת תיק ביטוח - חיסכון כבר מהחודש הראשון </h1>
+					<h2>בדיקת תיק ביטוח מקיפה של הביטוחים הקיימים יכולה לחסוך לכם אלפי שקלים בשנה</h2>
+				</div></div>
+		</div>
+		<div class="copyrights">
+			<p >@כל הזכויות שמורות לחברה</p>
+		</div>
+		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+		<script defer src="https://cdn.rawgit.com/kybarg/mdl-selectfield/mdl-menu-implementation/mdl-selectfield.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script src="raphael-2.1.4.min.js"></script>
+		<script src="justgage.js"></script>
+		<script>
+
+		var barValue = 0;
+		var notChecked = true;
+
+		$(document).ready( function () {
+			hideAlerts();
+		});
+
+		function total() {
+			hideAlerts();
+			var count = $(':checkbox:checked').length;
+			if (count === 0 || !$('#textbox').val()) {
+				if(count === 0 ) {
+					$('.alert-checkboxes').show();
+				} 
+				if (!$('#textbox').val()) {
+					$('.alert-ammount').show();
+				}
+				return;
+			}
+			var buton = $('#textbox').val();
+			var totalIn = buton/count;
+			console.log(totalIn);
+			$('#second-wrapper').show();
+
+
+			setTimeout(function(){
+				$('#first-wrapper').hide();
+				$('#second-wrapper').hide();
+				barValue = 100000;
+				g.refresh(barValue);
+				setTimeout(function() {
+					barValue =totalIn;
+					g.refresh(barValue);
+				},2000)
+				
+				$('#third-wrapper').show();
+			}, 3000);	
+
+		};
+
+		var g = new JustGage({
+						id: "gauge",
+						value: barValue,
+						pointer: true,
+						min: 0,
+						max: 10000,
+						minTxt: "מתחת לממוצע",
+						maxTxt: "מעל הממוצע",
+						title: "גובה התשלום",
+						textRenderer: customValue,
+						relativeGaugeSize: true,
+						levelColorsGradient: false
+						});
+		function hideAlerts () {
+			$('.alert-checkboxes').hide();
+			$('.alert-ammount').hide();
+		}
+		function customValue(val) {
+            if (val < 50) {
+                return 'נמוך';
+            } else if (val > 50) {
+                return 'גבוה';
+            } else if (val === 50) {
+                return 'מושלם';
+            }
+        }
+		</script>
+		
+	</body>
+</html>
