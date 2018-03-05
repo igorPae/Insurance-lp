@@ -42,6 +42,7 @@ $headers = "From : <$form> \r\n";
         top: 0;
         left: 0;
      
+     
 }
 
 @media screen and (max-width: 1024px) { /* Определяется свое для каждого конкретного изображения */
