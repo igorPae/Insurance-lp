@@ -331,9 +331,6 @@ $headers = "From : <$form> \r\n";
 		display:block
 	}
 	#buton {
-	    
-	    
-	    
 	    margin-top: 25px;
 	    
  	  }
@@ -427,7 +424,7 @@ input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([re
 }
 .alert-checkboxes {
 	position: absolute;
-    bottom: 91px;
+    bottom: -18px;
     color: red;
     font-weight: bold;
 }
@@ -519,10 +516,10 @@ a.bttn {
   
 }
 a.bttn:hover {
-  color: #5d5e5c;
+  color: black;
 }
 a.bttn:focus {
-  color: #5d5e5c;
+  color: black;
 }
 
 
@@ -620,7 +617,10 @@ a.bttn:focus {
 								</div>
 								
 							</div>
-							<p class="alert-checkboxes">אנא סמן לפחות ביטוח אחד</p>
+							<div class="row" >
+								<div class="col-xs-12"><p class="alert-checkboxes">אנא סמן לפחות ביטוח אחד</p>
+								</div>
+							</div>
 							<div class="row" id="input-buton">
 								<div class="col-xs-12 ammount">
 									<div class="input-group">
@@ -695,7 +695,7 @@ a.bttn:focus {
 
 								<!-- <button type="submit" name='submit' class="bttn" id="sendinfo"  value="Send">שלח</button> -->
 								<!-- <div class="flex"> -->
-									  <a href="#0" class="bttn" id="send1">שלח</a>
+									  <a href="#0" type="submit" class="bttn" id="send1">שלח</a>
 									<!-- </div> -->
 								<?php
 								if (isset ($_POST['submit'])) {
