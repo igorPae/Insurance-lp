@@ -1,17 +1,4 @@
-<html>
-		<head>
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<link rel="stylesheet" href="mdb.min.css">
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-		<link rel="stylesheet" href="https://cdn.rawgit.com/kybarg/mdl-selectfield/mdl-menu-implementation/mdl-selectfield.min.css">
-		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-		</head>
-		<style>
+
 #textrashi{ 
 	height: 40%;
 	text-align: center;
@@ -124,7 +111,7 @@ body {
         width: 100%;
         height: auto;
 
-       
+        z-index: -1;
         position: fixed;
         top: 0;
         left: 0;
@@ -139,20 +126,83 @@ body {
 }
 
 
+#main {
 
+}
 .container-fluid {
 	width: 100%;
 }
 
+#wrapper-bank {
+	display: none;
+	/*position:fixed; top:0; 
 
+ margin: 2px;	background-color: black;*/
+}
+.banks-list {
+	list-style: none;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+    -ms-flex-pack: distribute;
+    
+    justify-content: space-around;
+}
+@media screen and (max-width: 768px){
+	.bank-list  {
+		 display: flex;
+   		 flex-direction: column;
+	}
+}
+.banks-list > .list-item {
+	display: inline-block;
+	height: 30px;
+    width: 50px;
+}
+.banks-list > .list-item:hover label {
+	 font-size: 20px;
+}
+.banks-list .checked {
+	font-size: 20px;
+	color: #cb841f;
+}
+label {
+	height: 100%;
+	text-align: center;
+	margin:auto 0;
+	cursor: pointer;
+	font-size: 25px;
+}
+.nvisible {
+	visibility: hidden;
+}
+.list-item {
+  margin: 2px;
+}
+.list-item input {
+	visibility: hidden;
+}
+#sendinfo {
+  width: 30%;
+  padding: 0px;
+}
 
-
-
-
-
-
-
-
-
-		</style>
-</html>
+#input-bank {
+  height: 100%;
+	text-align: center;
+	margin:0 auto;
+  /*display: flex;
+  flex-direction: row;*/
+}
+#textbox {
+  width: 75%;
+height: 35px;
+}
+#basic-addon1 {
+  text-align: center;
+  margin: 0 auto;
+  height: 10px;
+}
+#bankChoice {
+	height: 85px;
+}
