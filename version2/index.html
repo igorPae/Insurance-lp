@@ -7,13 +7,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="bootstrap-3.min.css">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<link rel="stylesheet" href="style.css">
-
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 		<img src="rendered.jpg" class="bg">
+       
+      </p>
 		<div class="container-fluid" id="main">
 			<div class="row">
 							<div class="col-sm-12" id="textrashi">
@@ -26,8 +28,8 @@
                             <div class="col-sm-4" >
                             	<a href="#0" type="submit" class="bttn" id="bank" onclick="transfer()" >bank</a>
                             </div>
-                            <div class="col-sm-4" id="insurance">
-                            	<a href="#0" type="submit" class="bttn" >שלח</a>
+                            <div class="col-sm-4" id="insurance" ">
+                            	<a href="#0" type="submit" class="bttn" onclick="insurance()" >שלח</a>
                             </div>
                             <div class="col-sm-4" id="store">
                             	<a href="#0" type="submit" class="bttn" >שלח</a>
@@ -36,16 +38,18 @@
         </div>
         <div id="wrapper-bank" class="container-fluid">
 		 	<div class="row">
-		              <div class="col-xl-12">
+		 		<i class="fa fa-arrow-right" onclick="back()"></i>
+		              <div class="col-xl-12" >
 		       	         <h2>באיזה בנק אתם מנהלים חשבון?</h2>
 		              </div> 
 		    </div> 
-            <div class="row" id="bankChoice">
+            <div class="row">
+            	
               	<div class="col-md-6 col-md-offset-3">
 	              	<ul class="banks-list">
 		              	<li class="list-item eachBank">
 		              		<label>
-		              		 פועלים
+		              		 הפועלים
 		              			
 		              		 <input type="radio" name="optradio" class="nvisible">
 		              		 	
@@ -92,46 +96,90 @@
 	             </div>
             </div> 
             <div class="row" id="input-bank">
-               <div class="col-md-7 col-sm-8 "> 
-               		  <div class="input-group">
-						 <span  class="input-group-addo" id="basic-addon1" >₪</span>
+               <div class="col-xs-12 col-sm-4 input-wrapper"> 
+               		  <div class="input-group" id="group">
+						 <span  class="input-group-addon" id="basic-addon1" >₪</span>
 						 <input type="text" id="textbox" placeholder="סכום עבור כל הביטוחים שנבחרו" >
 						 <button type="submit" name='submit' class="bttn"   id="sendinfo"  value="Send">שלח</button>
 					  </div>
-				
-				
 						 
-				          
                </div> 
-             </div>         
+            
+             </div> 
+             <div class="row" id="datchik">
+             	<div id="gauge"  class="200x160px" style="width:45%; height:95%;margin: 0 auto;display: none"></div>
+             </div>        
         </div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="raphael-2.1.4.min.js"></script>
+		<script src="justgage.js"></script>
 <script>
-	function transfer (){
-		$('#main').hide();
-		$('#wrapper-bank').show();
-		console.log("show()");
-	}
+	
       // function bankChoice (){
       // 	$("a").removeClass('bttn');
 
       // 	$("input[type='radio']:checked").addClass("addbank");
       
-      // }
+      // 
+      barValue = 80;
+		
+      var g = new JustGage({
+						id: "gauge",
+						value: barValue,
+						pointer: true,
+						min: 0,
+						max: 10000,
+						minTxt: "מתחת לממוצע",
+						maxTxt: "מעל הממוצע",
+						title: "גובה התשלום",
+						textRenderer: customValue,
+						relativeGaugeSize: true,
+						levelColorsGradient: false
+						});
 	
-		$('.eachBank').click(function() {
-			
-			
-			$('.eachBank').each(function () {
-				$(this).removeClass('checked');
-				console.log($(this));
-			})
-
-			$(this).addClass('checked');
+	$('.eachBank').click(function() {
+		
+		
+		$('.eachBank').each(function () {
+			$(this).removeClass('checked');
+			console.log($(this));
 		})
-	
+
+		$(this).addClass('checked');
+	});
+
+	$('#sendinfo').click(function (){
+		$('#gauge').show(1000);
+	});
+
+	function insurance (){
+		$('#main').hide();
+		$('#insurance').show();
+		
+	}
+
+	function customValue(val) {
+			if (val < 50) {
+			    return 'נמוך';
+			} else if (val > 50) {
+			    return 'גבוה';
+			} else if (val === 50) {
+			    return 'מושלם';
+			}
+	}
+
+	function transfer (){
+		$('#main').hide();
+		$('#wrapper-bank').show();
+	}
+function back (){
+	$('#wrapper-bank').hide();
+	$("#main").show();
+}
+
 	
 </script>
 

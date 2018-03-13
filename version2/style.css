@@ -147,6 +147,7 @@ body {
     -ms-flex-pack: distribute;
     
     justify-content: space-around;
+    padding: 0;
 }
 @media screen and (max-width: 768px){
 	.bank-list  {
@@ -160,7 +161,7 @@ body {
     width: 50px;
 }
 .banks-list > .list-item:hover label {
-	 font-size: 20px;
+	 text-decoration: underline;
 }
 .banks-list .checked {
 	font-size: 20px;
@@ -173,6 +174,10 @@ label {
 	cursor: pointer;
 	font-size: 25px;
 }
+label:hover { 
+    text-decoration: underline; 
+   }
+
 .nvisible {
 	visibility: hidden;
 }
@@ -194,15 +199,59 @@ label {
   /*display: flex;
   flex-direction: row;*/
 }
+.input-wrapper {
+	float: none;
+    display: block;
+    margin: 5% auto;
+}
+.input-group {
+	display: block;
+}
 #textbox {
-  width: 75%;
-height: 35px;
+	width: 94%;
+	height: 37px;
+	display: inline-block;
+	float: right;
+	margin-top: -1px;
+	color: #000;
 }
 #basic-addon1 {
   text-align: center;
-  margin: 0 auto;
-  height: 10px;
+    margin: 0 auto;
+    height: 35px;
+    width: 6%;
+    display: inline-block;
+    border: none;
+    float: right;
+    border-radius: 0;
+    vertical-align: -webkit-baseline-middle;
+    padding: 0;
+    padding-top: 10px;
+    padding-left: 1px;
 }
 #bankChoice {
 	height: 85px;
+}
+#datchik {
+	height: 263px;
+}
+.fa-arrow-right:before {
+    content: "\f061";
+    font-size: 25px;
+}
+@media screen and (max-width: 550px){
+	li > label  {
+		 font-size: 21px
+	}
+@media screen and (max-width: 460px){
+	li > label  {
+		 font-size: 17px
+	}
+	@media screen and (max-width: 660px){
+	 #gauge {
+		 
+	width: 45%;
+    height: 93%;
+    margin: 0px auto;
+	}
 }
