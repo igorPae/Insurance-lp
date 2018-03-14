@@ -99,6 +99,8 @@ body {
 		color:rgb(240, 173, 78);
 		font-family: "Open Sans Hebrew";
 		
+			max-width: 100%;
+		
 	}
  img.bg {
        
@@ -128,7 +130,7 @@ body {
 
 }
 .container-fluid {
-	width: 100%;
+	//width: 100%;
 }
 #shoping {
 	display: none;
@@ -194,7 +196,10 @@ label:hover {
   width: 30%;
   padding: 0px;
 }
-
+.row {
+	margin-left: 0;
+	margin-right: 0;
+}
 #input-bank {
   height: 100%;
 	text-align: center;
@@ -286,9 +291,10 @@ label:hover {
 	margin:0 auto;
 }
 #datchik-shoping {
-	height: 263px;
+	height: 35px;
+
 }
-#gaige-shoping {
+#gauge-shoping {
 	width: 80%;
 }
 #input-shoping {
@@ -298,6 +304,7 @@ label:hover {
 }
 #datchik-insurance {
 	height: 263px;
+
 }
 #gaige-insurance {
 	width: 80%;
