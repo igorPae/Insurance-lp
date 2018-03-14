@@ -1,4 +1,5 @@
-
+@import url(https://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
+@import url(https://fonts.googleapis.com/earlyaccess/opensanshebrewcondensed.css);
 #textrashi{ 
 	height: 40%;
 	text-align: center;
@@ -54,7 +55,7 @@ a.bttn:focus {
   border-radius: 2px;
   position: relative;
   //box-shadow: 0 2px 10px rgb(240, 173, 78), 0 3px 6px rgba(0, 0, 0, 0.1);
-  margin-top: 5px;
+  margin-top: 45px;
 }
 .bttn:before {
   -webkit-transition: 0.5s all ease;
@@ -99,9 +100,6 @@ body {
 		font-family: "Open Sans Hebrew";
 		
 	}
-
-@import url(https://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
-@import url(https://fonts.googleapis.com/earlyaccess/opensanshebrewcondensed.css);
  img.bg {
        
         min-height: 100%;
@@ -132,7 +130,9 @@ body {
 .container-fluid {
 	width: 100%;
 }
-
+#shoping {
+	display: none;
+}
 #wrapper-bank {
 	display: none;
 	/*position:fixed; top:0; 
@@ -158,14 +158,17 @@ body {
 .banks-list > .list-item {
 	display: inline-block;
 	height: 30px;
-    width: 50px;
+    //width: 50px;
 }
 .banks-list > .list-item:hover label {
 	 text-decoration: underline;
 }
 .banks-list .checked {
-	font-size: 20px;
+	//font-size: 20px;
 	color: #cb841f;
+}
+.banks-list .checked label {
+	text-decoration: underline;
 }
 label {
 	height: 100%;
@@ -175,7 +178,7 @@ label {
 	font-size: 25px;
 }
 label:hover { 
-    text-decoration: underline; 
+   // text-decoration: underline; 
    }
 
 .nvisible {
@@ -238,24 +241,53 @@ label:hover {
 .fa-arrow-right:before {
     content: "\f061";
     font-size: 25px;
-    position: fixed;
-    position: fixed;
     top: 10px;
     right: 2px;
+}
+.back-wrapper {
+	position: fixed;
+    top: 34px;
+    right: 21px;
+    cursor: pointer;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  padding-right: 5px;
 }
 @media screen and (max-width: 550px){
 	li > label  {
 		 font-size: 21px
 	}
+}
 @media screen and (max-width: 460px){
 	li > label  {
-		 font-size: 17px
+		 font-size: 15px
 	}
-	@media screen and (max-width: 660px){
-	 #gauge {
-		 
-	width: 45%;
-    height: 93%;
-    margin: 0px auto;
+	.banks-list {
+    	justify-content: space-between;
 	}
+	h2 {
+		padding: 0 7px;
+		margin-top: 53px;
+	}
+	#gauge {
+		width: 80%;
+	}
+}
+@media screen and (max-width: 660px){
+	#gauge {
+		width: 45%;
+	    height: 93%;
+	    margin: 0px auto;
+	}
+}
+#input-shoping {
+	 height: 100%;
+	text-align: center;
+	margin:0 auto;
+}
+#datchik-shoping {
+	height: 263px;
+}
+#gaige-shoping {
+	width: 80%;
 }

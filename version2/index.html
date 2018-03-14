@@ -29,7 +29,7 @@
                             	<a href="#0" type="submit" class="bttn" id="bank" onclick="transfer()" >bank</a>
                             </div>
                             <div class="col-sm-4" id="insurance" ">
-                            	<a href="#0" type="submit" class="bttn" onclick="insurance()" >שלח</a>
+                            	<a href="#0" type="submit" class="bttn" onclick="shopingTransfer()" >shoping</a>
                             </div>
                             <div class="col-sm-4" id="store">
                             	<a href="#0" type="submit" class="bttn" >שלח</a>
@@ -38,7 +38,9 @@
         </div>
         <div id="wrapper-bank" class="container-fluid">
 		 	<div class="row">
-		 		<i class="fa fa-arrow-right" onclick="back()"></i>
+		 		<div class="back-wrapper">
+		 			<i class="fa fa-arrow-right" onclick="back()"></i>
+		 		</div>
 		              <div class="col-xl-12" >
 		       	         <h2>באיזה בנק אתם מנהלים חשבון?</h2>
 		              </div> 
@@ -110,7 +112,35 @@
              	<div id="gauge"  class="200x160px" style="width:45%; height:95%;margin: 0 auto;display: none"></div>
              </div>        
         </div>
+  </div>
+<div class="row" id="shoping">
+	<div class="row">
+		<div class="back-wrapper">
+			<i class="fa fa-arrow-right" onclick="back()"></i>
+		</div>
+		<div class="col-xl-12" >
+			<h2>באיזה סופר אתם קונים בד"כ?</h2>
+		</div>
+	</div>
+    <div class="row" id="input-shoping">
+               <div class="col-xs-12 col-sm-4 input-wrapper"> 
+               		  <div class="input-group" id="group">
+						 <span  class="input-group-addon" id="basic-addon1" >₪</span>
+						 <input type="text" id="textbox" placeholder="סכום עבור כל הביטוחים שנבחרו" >
+						 <button type="submit" name='submit' class="bttn"   id="sendinfo-shoping"  value="Send">בדוק</button>
+					  </div>
+						 
+               </div> 
+            
+    </div> 
+    </div> 
+             <div class="row" id="datchik-shoping">
+             	<div id="gauge-shoping"  class="200x160px" style="width:45%; height:95%;margin: 0 auto;display: none"></div>
+             </div>        
+    </div > 
+</div>
 
+       
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -128,6 +158,22 @@
 		
       var g = new JustGage({
 						id: "gauge",
+						value: barValue,
+						pointer: true,
+						min: 0,
+						max: 10000,
+						minTxt: "מתחת לממוצע",
+						maxTxt: "מעל הממוצע",
+						title: "גובה התשלום",
+						textRenderer: customValue,
+						relativeGaugeSize: true,
+						levelColorsGradient: false
+						});
+
+      var barValueShoping = 70;
+
+      var gsh = new JustGage({
+						id: "gauge-shoping",
 						value: barValue,
 						pointer: true,
 						min: 0,
@@ -179,7 +225,13 @@ function back (){
 	$('#wrapper-bank').hide();
 	$("#main").show();
 }
-
+function shopingTransfer() {
+	$('#main').hide();
+	$('#shoping').show();
+}
+    $('#sendinfo-shoping').click(function (){
+	    $('#gauge-shoping').show(1000);
+});
 	
 </script>
 
