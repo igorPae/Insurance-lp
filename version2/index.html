@@ -26,13 +26,13 @@
 
             <div class="row" id="buttons">
                             <div class="col-sm-4" >
-                            	<a href="#0" type="submit" class="bttn" id="bank" onclick="transfer()" >bank</a>
+                            	<a href="#0" type="submit" class="bttn" id="bank" onclick="transfer()" >בנק</a>
                             </div>
                             <div class="col-sm-4" id="insurance" ">
-                            	<a href="#0" type="submit" class="bttn" onclick="shopingTransfer()" >shoping</a>
+                            	<a href="#0" type="submit" class="bttn" onclick="shopingTransfer()" >קניות</a>
                             </div>
                             <div class="col-sm-4" id="store">
-                            	<a href="#0" type="submit" class="bttn" >שלח</a>
+                            	<a href="#0" type="submit" class="bttn" onclick="insuranceTransfer()" >ביטוח</a>
                             </div>
             </div>
         </div>
@@ -112,11 +112,11 @@
              	<div id="gauge"  class="200x160px" style="width:45%; height:95%;margin: 0 auto;display: none"></div>
              </div>        
         </div>
-  </div>
-<div class="row" id="shoping">
+ 
+<div class="container-fluid" id="wrapper-shoping">
 	<div class="row">
 		<div class="back-wrapper">
-			<i class="fa fa-arrow-right" onclick="back()"></i>
+			<i class="fa fa-arrow-right" onclick="backShoping()"></i>
 		</div>
 		<div class="col-xl-12" >
 			<h2>באיזה סופר אתם קונים בד"כ?</h2>
@@ -135,7 +135,85 @@
     </div> 
     </div> 
              <div class="row" id="datchik-shoping">
-             	<div id="gauge-shoping"  class="200x160px" style="width:45%; height:95%;margin: 0 auto;display: none"></div>
+             	<div id="gauge-shoping"  class="200x160px" style="width:45%; height:95%; margin: 0 auto; display: none"></div>
+             </div>        
+    </div > 
+</div>
+<div class="container-fluid" id="wrapper-insurance">
+	<div class="row">
+		<div class="back-wrapper" >
+			<i class="fa fa-arrow-right" onclick="backInsurance()"></i>
+		</div>
+		<div class="col-xl-12" >
+			<h2>איזה ביטוחים יש לכם?</h2>
+		</div>
+		<div class="row">
+            	
+              	<div class="col-md-6 col-md-offset-3">
+	              	<ul class="banks-list">
+		              	<li class="list-item eachBank">
+		              		<label>
+		              		 בריאות
+		              			
+		              		 <input type="radio" name="optradio" class="nvisible">
+		              		 	
+		              		</label>
+		              	</li>
+		              	<li class="list-item eachBank">
+		              		<label>
+		              		 משכנתא 
+		              			<input type="radio" name="optradio" class="nvisible">
+		              	     
+		              		
+		              		</label>
+		              	</li>
+		              	<li class="list-item eachBank">
+		              		<label>
+		              		  חיים
+		              		 	<input type="radio" name="optradio" class="nvisible">
+		              		  
+		              		 
+		              		</label>
+		              	</li>
+		              	<li class="list-item eachBank">
+		              		<label>
+		              		  רכב
+		              		 	<input type="radio" name="optradio" class="nvisible">
+		              		 
+		              		 
+		              		</label>
+		              	</li>
+		              	<li class="list-item eachBank">
+		              		<label>
+		              		  לא יודע
+		              		 	<input type="radio" name="optradio" class="nvisible">
+		              		</label>
+		              	</li>
+		              	<li class="list-item eachBank">
+		              	 	<label>
+		              	       אין לי ביטוח
+		              	      	<input type="radio" name="optradio" class="nvisible">
+		              	      
+		              	    </label> 
+		              	</li>
+		             </ul>
+	             </div>
+            </div> 
+	</div>
+    <div class="row" id="input-insurance">
+               <div class="col-xs-12 col-sm-4 input-wrapper"> 
+               		  <div class="input-group" id="group">
+						 <span  class="input-group-addon" id="basic-addon1" >₪</span>
+						 <input type="text" id="textbox" placeholder="סכום עבור כל הביטוחים שנבחרו" >
+						 <button type="submit" name='submit' class="bttn"   id="sendinfo-insurance"  value="Send">בדוק</button>
+					  </div>
+						 
+               </div> 
+            
+    </div> 
+    </div> 
+             <div class="row" id="datchik-insurance">
+             	<div id="gauge-insurance"  class="200x160px" style="width:45%; height:95%;margin: 0 auto;display: none"></div>
              </div>        
     </div > 
 </div>
@@ -174,7 +252,7 @@
 
       var gsh = new JustGage({
 						id: "gauge-shoping",
-						value: barValue,
+						value: barValueShoping,
 						pointer: true,
 						min: 0,
 						max: 10000,
@@ -185,6 +263,23 @@
 						relativeGaugeSize: true,
 						levelColorsGradient: false
 						});
+
+      var barValueInsurance = 90;
+
+      var gIn = new JustGage({
+						id: "gauge-insurance",
+						value: barValueInsurance,
+						pointer: true,
+						min: 0,
+						max: 10000,
+						minTxt: "מתחת לממוצע",
+						maxTxt: "מעל הממוצע",
+						title: "גובה התשלום",
+						textRenderer: customValue,
+						relativeGaugeSize: true,
+						levelColorsGradient: false
+						});
+
 	
 	$('.eachBank').click(function() {
 		
@@ -221,18 +316,39 @@
 		$('#main').hide();
 		$('#wrapper-bank').show();
 	}
-function back (){
-	$('#wrapper-bank').hide();
-	$("#main").show();
+
+    function back (){
+	    $('#wrapper-bank').hide();
+	    $("#main").show();
 }
+     function backShoping (){
+	    $('#wrapper-shoping').hide();
+	    $("#main").show();
+}     
+      function backInsurance (){
+	    $('#wrapper-insurance').hide();
+	    $("#main").show();
+}
+
+
+
+
 function shopingTransfer() {
-	$('#main').hide();
-	$('#shoping').show();
+	    $('#main').hide();
+	    $('#wrapper-shoping').show();
 }
-    $('#sendinfo-shoping').click(function (){
+
+        $('#sendinfo-shoping').click(function (){
 	    $('#gauge-shoping').show(1000);
 });
-	
+
+    function insuranceTransfer() {
+	$('#main').hide();
+	$('#wrapper-insurance').show();
+}
+    $('#sendinfo-insurance').click(function (){
+	    $('#gauge-insurance').show(1000);
+});
 </script>
 
 </body>

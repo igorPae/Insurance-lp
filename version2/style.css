@@ -291,3 +291,25 @@ label:hover {
 #gaige-shoping {
 	width: 80%;
 }
+#input-shoping {
+	height: 100%;
+	text-align: center;
+	margin:0 auto;
+}
+#datchik-insurance {
+	height: 263px;
+}
+#gaige-insurance {
+	width: 80%;
+}
+#input-insurance {
+	height: 100%;
+	text-align: center;
+	margin:0 auto;
+}
+#wrapper-shoping {
+	display: none;
+}
+#wrapper-insurance {
+	display: none;
+}
