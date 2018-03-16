@@ -39,7 +39,7 @@
         <div id="wrapper-bank" class="container-fluid">
 		 	<div class="row">
 		 		<div class="back-wrapper">
-		 			<i class="fa fa-arrow-right" onclick="back()"></i>
+		 			<i class="fa fa-arrow-right" onclick="back('bank')"></i>
 		 		</div>
 		              <div class="col-xl-12" >
 		       	         <h2>באיזה בנק אתם מנהלים חשבון?</h2>
@@ -50,12 +50,7 @@
               	<div class="col-md-6 col-md-offset-3">
 	              	<ul class="banks-list">
 		              	<li class="list-item eachBank">
-		              		<label>
-		              		 הפועלים
-		              			
-		              		 <input type="radio" name="optradio" class="nvisible">
-		              		 	
-		              		</label>
+		              		<label>הפועלים<input type="radio" name="optradio" class="nvisible"></label>
 		              	</li>
 		              	<li class="list-item eachBank">
 		              		<label>
@@ -95,21 +90,34 @@
 		              	    </label> 
 		              	</li>
 		             </ul>
+		             
 	             </div>
             </div> 
+                          
             <div class="row" id="input-bank">
+            	<div class="row" >
+								<div class="col-xs-12">
+									<p class="alert-checkboxes" style="display: none;" >אנא סמן לפחות ביטוח אחד</p>
+								</div>
+						 </div> 
                <div class="col-xs-12 col-sm-4 input-wrapper"> 
                		  <div class="input-group" id="group">
 						 <span  class="input-group-addon" id="basic-addon1" >₪</span>
 						 <input type="text" id="textbox" placeholder="סכום עבור כל הביטוחים שנבחרו" >
-						 <button type="submit" name='submit' class="bttn"   id="sendinfo"  value="Send">שלח</button>
+						   <div class="row" >
+								<div class="col-xs-12"> 
+									<p class="alert-ammount" style="display: none;">אנא הזן סכום</p>
+								</div>
+			                </div> 
+						 
+						 <button type="submit" name='submit' class="bttn" onclick="total('bank')"  id="sendinfo"  value="Send">שלח</button>
 					  </div>
 						 
                </div> 
             
              </div> 
              <div class="row" id="datchik">
-             	<div id="gauge"  class="200x160px" style="width:45%; height:95%;margin: 0 auto;display: none"></div>
+             	<div id="gauge-bank"  class="200x160px" style="width:45%; height:95%;margin: 0 auto;display: none"></div>
              </div>        
         </div>
 
@@ -117,18 +125,26 @@
 <div class="container-fluid" id="wrapper-shoping">
 	<div class="row">
 		<div class="back-wrapper">
-			<i class="fa fa-arrow-right" onclick="backShoping()"></i>
+			<i class="fa fa-arrow-right" onclick="back('shoping')"></i>
 		</div>
 		<div class="col-xl-12" >
 			<h2>באיזה סופר אתם קונים בד"כ?</h2>
 		</div>
 	</div>
+	
     <div class="row" id="input-shoping">
+    	                   
                <div class="col-xs-12 col-sm-4 input-wrapper"> 
                		  <div class="input-group" id="group">
 						 <span  class="input-group-addon" id="basic-addon1" >₪</span>
 						 <input type="text" id="textbox" placeholder="סכום עבור כל הביטוחים שנבחרו" >
-						 <button type="submit" name='submit' class="bttn"   id="sendinfo-shoping"  value="Send">בדוק</button>
+						  <div class="row" >
+								<div class="col-xs-12"> 
+									<p class="alert-ammount" style="display: none;">אנא הזן סכום</p>
+								</div>
+			                </div> 
+						
+						 <button type="submit" name='submit' class="bttn" onclick="totalShoping()"  id="sendinfo-shoping"  value="Send">בדוק</button>
 					  </div>
 						 
                </div> 
@@ -143,7 +159,7 @@
 <div class="container-fluid" id="wrapper-insurance">
 	<div class="row">
 		<div class="back-wrapper" >
-			<i class="fa fa-arrow-right" onclick="backInsurance()"></i>
+			<i class="fa fa-arrow-right" onclick= "back('insurance')" ></i>
 		</div>
 		<div class="col-xl-12" >
 			<h2>איזה ביטוחים יש לכם?</h2>
@@ -198,17 +214,29 @@
 		              	    </label> 
 		              	</li>
 		             </ul>
+		            
 	             </div>
             </div> 
 	</div>
+	
     <div class="row" id="input-insurance">
+    	                  <div class="row" >
+								<div class="col-xs-12">
+									<p class="alert-checkboxes" style="display: none;" >אנא סמן לפחות ביטוח אחד</p>
+								</div>
+						  </div>
                <div class="col-xs-12 col-sm-4 input-wrapper"> 
                		  <div class="input-group" id="group">
 						 <span  class="input-group-addon" id="basic-addon1" >₪</span>
-						 <input type="text" id="textbox" placeholder="סכום עבור כל הביטוחים שנבחרו" >
-						 <button type="submit" name='submit' class="bttn"   id="sendinfo-insurance"  value="Send">בדוק</button>
+						 <input type="text" id="textbox"  onclick="totalInsurance()" placeholder="סכום עבור כל הביטוחים שנבחרו" >
+						  <div class="row" >
+								<div class="col-xs-12"> 
+									<p class="alert-ammount" style="display: none;">אנא הזן סכום</p>
+								</div>
+			                </div>  
+						 <button type="submit" name='submit' class="bttn" onclick="totalInsurance()"  id="sendinfo-insurance"  value="Send">בדוק</button>
 					  </div>
-						 
+						   
                </div> 
             
     </div> 
@@ -233,11 +261,13 @@
       // 	$("input[type='radio']:checked").addClass("addbank");
       
       // 
-      barValue = 80;
+
+
+      var barValuebank = 80;
 		
       var g = new JustGage({
-						id: "gauge",
-						value: barValue,
+						id: "gauge-bank",
+						value: barValuebank,
 						pointer: true,
 						min: 0,
 						max: 10000,
@@ -249,11 +279,11 @@
 						levelColorsGradient: false
 						});
 
-      var barValueShoping = 70;
+      var barValueshoping = 0;
 
       var gsh = new JustGage({
 						id: "gauge-shoping",
-						value: barValueShoping,
+						value: barValueshoping,
 						pointer: true,
 						min: 0,
 						max: 10000,
@@ -265,11 +295,11 @@
 						levelColorsGradient: false
 						});
 
-      var barValueInsurance = 90;
+      var barValueinsurance = 90;
 
       var gIn = new JustGage({
 						id: "gauge-insurance",
-						value: barValueInsurance,
+						value: barValueinsurance,
 						pointer: true,
 						min: 0,
 						max: 10000,
@@ -282,6 +312,8 @@
 						});
 
 	
+
+
 	$('.eachBank').click(function() {
 		
 		
@@ -293,9 +325,9 @@
 		$(this).addClass('checked');
 	});
 
-	$('#sendinfo').click(function (){
-		$('#gauge').show(1000);
-	});
+	// $('#sendinfo').click(function (){
+	// 	$('#gauge').show(1000);
+	// });
 
 	function insurance (){
 		$('#main').hide();
@@ -316,20 +348,37 @@
 	function transfer (){
 		$('#main').hide();
 		$('#wrapper-bank').show();
+		$("p").hide();
 	}
 
-    function back (){
-	    $('#wrapper-bank').hide();
+//     function back (){
+//     	$("#gauge").hide();
+//     	barValue = 0;
+// 	    $('#wrapper-bank').hide();
+// 	    $("#main").show();
+// }
+//      function backShoping (){
+//      	$("#gauge-shoping").hide();
+// 	    $('#wrapper-shoping').hide();
+// 	    barValueShoping = 0;
+// 	    $("#main").show();
+// }     
+    function back (three){
+	    var xGauge = '#gauge-'+ three;
+	    var yWrapper = '#wrapper-'+ three;
+	    var xBar = "barValue"+three;
+	    $(xGauge).hide();
+	    $(yWrapper).hide();
+	     xBar = 0;
+	    $("input[type='radio']:checked").prop("checked",false);
+	    $(".list-item").each(function() {
+	    	$(this).removeClass("checked");
+	    });
+	    $(".input-group input").each(function() {
+	    	$(this).val("");
+	    });  
 	    $("#main").show();
-}
-     function backShoping (){
-	    $('#wrapper-shoping').hide();
-	    $("#main").show();
-}     
-      function backInsurance (){
-	    $('#wrapper-insurance').hide();
-	    $("#main").show();
-}
+	}
 
 
 
@@ -337,7 +386,11 @@
 function shopingTransfer() {
 	    $('#main').hide();
 	    $('#wrapper-shoping').show();
+	    $("p").hide();
 }
+        $('#sendinfo').click(function (){
+	    $('#gauge-bank').show(1000);
+});
 
         $('#sendinfo-shoping').click(function (){
 	    $('#gauge-shoping').show(1000);
@@ -346,10 +399,103 @@ function shopingTransfer() {
     function insuranceTransfer() {
 	$('#main').hide();
 	$('#wrapper-insurance').show();
+	$("p").hide();
 }
+
     $('#sendinfo-insurance').click(function (){
 	    $('#gauge-insurance').show(1000);
 });
+
+   
+
+		function total(treeTotal) {
+
+			var totalGauge = treeTotal;
+			var count = $("input[type='radio']:checked").length;
+			console.log($("input[type='radio']:checked").length);
+			if (count === 0 || !$('#textbox').val()) {
+				if(count === 0 ) {
+					$(".alert-checkboxes").show();
+				} else {
+					$(".alert-checkboxes").hide();
+				}
+				if (!$('#textbox').val()) {
+					$('.alert-ammount').show();
+				} else {
+					$('.alert-ammount').hide();
+				}
+
+				return;
+			}
+			$('.alert-ammount').hide();
+			$(".alert-checkboxes").hide();
+			 gaugeShow(totalGauge);
+		}
+
+		function totalInsurance() {
+			
+			var count = $("input[type='radio']:checked").length;
+			if (count === 0 || !$('#textbox').val()) {
+				if(count === 0 ) {
+					return $('.alert-checkboxes').show();
+				} 
+				if (!$('#textbox').val()) {
+				return	$('.alert-ammount').show();
+				}
+
+				// return gaugeShow() ;
+			}
+		}
+
+		function totalShoping() {
+			
+			var count = $("input[type='radio']:checked").length;
+			if (count === 0 || !$('#textbox').val()) {
+				if(count === 0 ) {
+					$('.alert-checkboxes').show();
+				} 
+				if (!$('#textbox').val()) {
+					$('.alert-ammount').show();
+				}
+
+				return $('#gauge-shoping').show(1000) ;
+			}
+		}
+		 
+		function gaugeShow(totalGauge) {
+	        var yWrapper = '#wrapper-'+ totalGauge;
+			var xGauge = "#gauge-"+totalGauge;
+			var xBar = "barValue"+totalGauge;
+			$(xGauge).show(1000);
+
+			 setTimeout(function(){
+				
+				xBar = 100000;
+				g.refresh(xBar);
+				setTimeout(function() {
+					xBar = $("#textbox").val();
+					g.refresh(xBar);
+				},2000)
+				
+				
+			}, 3000);
+
+			
+    }
+        function customValue(val) {
+            if (val < 50) {
+                return 'נמוך';
+            } else if (val > 50) {
+                return 'גבוה';
+            } else if (val === 50) {
+                return 'מושלם';
+            }
+        }
+
+		// function hideAlerts () {
+		// 	$('.alert-checkboxes').hide();
+		// 	$('.alert-ammount').hide();
+		// }
 </script>
 
 </body>
