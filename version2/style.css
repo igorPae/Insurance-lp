@@ -258,7 +258,7 @@ label:hover {
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   padding-right: 5px;
 }
-@media screen and (max-width: 550px){
+@media screen and (max-width: 405px){
 	li > label  {
 		 font-size: 21px
 	}
@@ -330,7 +330,4 @@ label:hover {
 	display: none;
 	text-align: center;
 	color: red;
-}
-.alert-ammount-hide {
-	display: none;
 }
