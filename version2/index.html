@@ -26,13 +26,13 @@
 
             <div class="row" id="buttons">
                             <div class="col-sm-4" >
-                            	<a href="#0" type="submit" class="bttn" id="bank" onclick="transfer()" >בנק</a>
+                            	<a href="section-bank.html?area=bank"  class="bttn" id="bank"  >בנק</a>
                             </div>
                             <div class="col-sm-4" id="insurance" ">
-                            	<a href="#0" type="submit" class="bttn" onclick="shopingTransfer()" >קניות</a>
+                            	<a href="section-insurance.html?area=insurance"  class="bttn"  >ביטוח</a>
                             </div>
                             <div class="col-sm-4" id="store">
-                            	<a href="#0" type="submit" class="bttn" onclick="insuranceTransfer()" >ביטוח</a>
+                            	<a href="section-shoping.html?area=shoping"  class="bttn"  >קניות</a>
                             </div>
             </div>
         </div>
@@ -110,7 +110,7 @@
 								</div>
 			                </div> 
 						 
-						 <button type="submit" name='submit' class="bttn" onclick="total('bank')"  id="sendinfo"  value="Send">שלח</button>
+						 <button type="submit" name='submit' class="bttn submit-button" onclick="total('bank')"  id="sendinfo"  value="Send">שלח</button>
 					  </div>
 						 
                </div> 
@@ -144,7 +144,7 @@
 								</div>
 			                </div> 
 						
-						 <button type="submit" name='submit' class="bttn" onclick="total('shoping')"  id="sendinfo-shoping"  value="Send">בדוק</button>
+						 <button type="submit" name='submit' class="bttn submit-button" onclick="total('shoping')"  id="sendinfo-shoping"  value="Send">בדוק</button>
 					  </div>
 						 
                </div> 
@@ -156,94 +156,95 @@
              </div>        
     </div > 
 </div>
-<div class="container-fluid" id="wrapper-insurance">
-	<div class="row">
-		<div class="back-wrapper" >
-			<i class="fa fa-arrow-right" onclick= "back('insurance')" ></i>
-		</div>
-		<div class="col-xl-12" >
-			<h2>איזה ביטוחים יש לכם?</h2>
-		</div>
+	<div class="container-fluid" id="wrapper-insurance">
 		<div class="row">
-            	
-              	<div class="col-md-6 col-md-offset-3">
-	              	<ul class="banks-list">
-		              	<li class="list-item eachBank">
-		              		<label>בריאות<input type="radio" name="optradio" class="nvisible"></label>
-		              	</li>	
-		              			
-		              		
-		              		 	
-		              		
-		              	
-		              	<li class="list-item eachBank">
-		              		<label>משכנתא<input type="radio" name="optradio" class="nvisible">
-		              		</label>
-		              	</li>		
-		              	     
-		              		
-		              		
-		              	
-		              	<li class="list-item eachBank">
-		              		<label>חיים<input type="radio" name="optradio" class="nvisible">
-		              		 </label>
-		              	</li>
-		              		 	
-		              		  
-		              		 
-		              		
-		              	<li class="list-item eachBank">
-		              		<label>רכב<input type="radio" name="optradio" class="nvisible">
-		              		</label>
-		              	</li>
-		              		 	
-		              		 
-		              		 
-		              		
-		              	<li class="list-item eachBank">
-		              		<label>לא יודע<input type="radio" name="optradio" class="nvisible">
-		              		</label>
-		              	</li>
-		              		 	
-		              		
-		              	<li class="list-item eachBank">
-		              	 	<label> אין לי ביטוח<input type="radio" name="optradio" class="nvisible">
-		              	   </label> 
-		              	</li>
+			<div class="back-wrapper" >
+				<i class="fa fa-arrow-right" onclick= "back('insurance')" ></i>
+			</div>
+			<div class="col-xl-12" >
+				<h2>איזה ביטוחים יש לכם?</h2>
+			</div>
+			<div class="row">
+	            	
+	              	<div class="col-md-6 col-md-offset-3">
+		              	<ul class="banks-list">
+			              	<li class="list-item eachBank">
+			              		<label>בריאות<input type="radio" name="optradio" class="nvisible"></label>
+			              	</li>	
+			              			
+			              		
+			              		 	
+			              		
+			              	
+			              	<li class="list-item eachBank">
+			              		<label>משכנתא<input type="radio" name="optradio" class="nvisible">
+			              		</label>
+			              	</li>		
+			              	     
+			              		
+			              		
+			              	
+			              	<li class="list-item eachBank">
+			              		<label>חיים<input type="radio" name="optradio" class="nvisible">
+			              		 </label>
+			              	</li>
+			              		 	
+			              		  
+			              		 
+			              		
+			              	<li class="list-item eachBank">
+			              		<label>רכב<input type="radio" name="optradio" class="nvisible">
+			              		</label>
+			              	</li>
+			              		 	
+			              		 
+			              		 
+			              		
+			              	<li class="list-item eachBank">
+			              		<label>לא יודע<input type="radio" name="optradio" class="nvisible">
+			              		</label>
+			              	</li>
+			              		 	
+			              		
+			              	<li class="list-item eachBank">
+			              	 	<label> אין לי ביטוח<input type="radio" name="optradio" class="nvisible">
+			              	   </label> 
+			              	</li>
 
-		              	      	
-		              	      
-		              	    		             </ul>
-		            
-	             </div>
-            </div> 
-	</div>
-	
-    <div class="row" id="input-insurance">
-    	                  <div class="row" >
-								<div class="col-xs-12">
-									<p class="alert-checkboxes" style="display: none;" >אנא סמן לפחות ביטוח אחד</p>
-								</div>
+			              	      	
+			              	      
+			              	    		             </ul>
+			            
+		             </div>
+	            </div> 
+		</div>
+		
+	    <div class="row" id="input-insurance">
+	    	                  <div class="row" >
+									<div class="col-xs-12">
+										<p class="alert-checkboxes" style="display: none;" >אנא סמן לפחות ביטוח אחד</p>
+									</div>
+							  </div>
+	               <div class="col-xs-12 col-sm-4 input-wrapper"> 
+	               		  <div class="input-group" id="group">
+							 <span  class="input-group-addon" id="basic-addon1" >₪</span>
+							 <input type="text" id="textbox"   placeholder="סכום עבור כל הביטוחים שנבחרו" >
+							 <div class="row" >
+									<div class="col-xs-12">  
+										<p class="alert-ammount" style="display: none;">אנא הזן סכום</p>
+									</div>
+				             </div>  
+							 <button type="submit" name='submit' class="bttn submit-button"   id="sendinfo-insurance"  value="Send">בדוק</button>
 						  </div>
-               <div class="col-xs-12 col-sm-4 input-wrapper"> 
-               		  <div class="input-group" id="group">
-						 <span  class="input-group-addon" id="basic-addon1" >₪</span>
-						 <input type="text" id="textbox"   placeholder="סכום עבור כל הביטוחים שנבחרו" >
-						  <div class="row" >
-								<div class="col-xs-12">  
-									<p class="alert-ammount" style="display: none;">אנא הזן סכום</p>
-								</div>
-			                </div>  
-						 <button type="submit" name='submit' class="bttn" onclick="total('insurance')"  id="sendinfo-insurance"  value="Send">בדוק</button>
-					  </div>
-						   
-               </div> 
-            
-    </div> 
-     
-             <div class="row" id="datchik-insurance">
-             	<div id="gauge-insurance"  class="200x160px" style="width:45%; height:95%;margin: 0 auto;display: none"></div>
-             </div>        
+							   
+	               </div> 
+	            
+	    </div> 
+	     
+	             <div class="row" id="datchik-insurance">
+	             	<div id="gauge-insurance"  class="200x160px" style="width:45%; height:95%;margin: 0 auto;display: none">
+	             	</div>
+	             </div>        
     </div > 
 </div>
 
@@ -408,12 +409,11 @@ function shopingTransfer() {
 
    
 
-		function total(treeTotal) {
-
+		function total(treeTotal, element) {
+			var sectionInput = $(element).parent().find('input').val();
 			var totalGauge = treeTotal;
 			var count = $("input[type='radio']:checked").length;
-			console.log($("input[type='radio']:checked").length);
-			if (count === 0 || !$('#textbox').val()) {
+			if (count === 0 || !sectionInput) {
 				if(count === 0 ) {
 					$(".alert-checkboxes").show();
 					console.log($(".alert-checkboxes"));
@@ -421,11 +421,11 @@ function shopingTransfer() {
 					$(".alert-checkboxes").hide();
 					
 				}
-				if (!$('#textbox').val()) {
+				if (!sectionInput) {
 					$('.alert-ammount').show();
 				} else {
 					$('.alert-ammount').hide();
-					console.log($('#textbox').val());
+					console.log(sectionInput);
 				}
 
 				return;
@@ -434,6 +434,19 @@ function shopingTransfer() {
 			$(".alert-checkboxes").hide();
 			 gaugeShow(totalGauge);
 		}
+
+		$('.submit-button').on('click', function(){
+			var treeTotal;
+			function getTreeTotal(value) {
+				switch(value) {
+					case 'sendinfo-insurance': treeTotal = 'insurance'; break;
+					case 'sendinfo-shoping': treeTotal = 'shoping'; break;
+					case 'sendinfo': treeTotal = 'bank'; break;
+				}
+				return treeTotal;
+            }
+            total(getTreeTotal($(this).attr('id')), $(this));
+		});
 
 		// function totalInsurance() {
 			
